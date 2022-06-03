@@ -33,18 +33,15 @@ export const fetchHouses = () => {
     // logic to fetch out houses from API
 
     try {
-      console.log('trying call');
-      const results = await fetch('/api/houses/');
+      const results = await fetch('http://192.168.1.193:3000/api/houses/');
       const resultData = await results.json();
 
-      console.log('resultData', resultData);
+      dispatch({
+        type: FETCH_HOUSES,
+        payload: resultData,
+      });
     } catch (error) {
       console.log('error: ', error);
     }
-
-    dispatch({
-      type: FETCH_HOUSES,
-      payload: houses,
-    });
   };
 };

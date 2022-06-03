@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 const HomeDetailsScreen = (props) => {
   const { houseId } = props.route.params;
   const house = useSelector((state) =>
-    state.house.find((house) => house._id == houseId)
+    state.house.houses.find((house) => house._id == houseId)
   );
   return (
     <ScrollView>
