@@ -22,7 +22,7 @@ const Card = ({
       <View style={styles.card}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>
-            {title.lengh > 30 ? title.slice(0, 30) + '...' : title}
+            {title && title.lengh > 30 ? title.slice(0, 30) + '...' : title}
           </Text>
         </View>
         <View style={styles.imageContainer}>
@@ -35,7 +35,7 @@ const Card = ({
         </View>
         <View style={styles.description}>
           <Text style={styles.descriptionText}>
-            {description.lengh > 100
+            {description && description.lengh > 100
               ? description.slice(0, 100) + '...'
               : description}
           </Text>
